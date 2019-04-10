@@ -7,9 +7,6 @@ class SiderBar extends Component {
     render() {
         return (
             <div className="layout_sider_box">
-            	<div className="logo">
-            		<img src={require('@/assets/image/group.png')} alt="" />
-            	</div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
 		            <Menu.Item key="1">
 		              <Icon type="user" />

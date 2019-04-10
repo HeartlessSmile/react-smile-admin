@@ -20,34 +20,7 @@ ul,li{
     .header_left{
         display: flex;
         height: 100%;
-        .logo{
-            cursor: pointer;
-        }
-        .header_nav_ul{
-            display: flex;
-            li{
-                margin-left: 70px;
-                font-size: 16px;
-                position: relative;
-                cursor: pointer;
-                &::before{
-                    content: "";
-                    position: absolute;
-                    top: 0px;
-                    left: 100%;
-                    width: 0;
-                    height: 100%;
-                    border-bottom: 3px solid #2253D4;
-                }
-            }
-            li.active{
-                color: #2253D4;
-                &::before{
-                    width: 100%;
-                    left: 0;
-                }
-            }
-        }
+        align-items: center;
     }
     .header_right{
         display: flex;
@@ -55,13 +28,13 @@ ul,li{
 }
 .userLi{
     display: flex;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     width: 140px;
-    height: 60px;
+    height: 40px;
     align-items: center;
     justify-content: center;
     span{
-        margin-left:5px 
+        margin-left:5px
     }
 }

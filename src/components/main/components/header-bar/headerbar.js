@@ -7,18 +7,14 @@ const { Header} = Layout;
 class HeaderBar extends Component {
 
     state={
-        activeIndex:0,
-        companyName:'丹源科技'
-    };
-    nav_li_click(index){
-        this.setState({
-            activeIndex:index
-        })
+        userName:'admin'
     };
     user_li_click = ({ item, key, keyPath }) => {
         message.info(`Click on item ${key}`);
     };
-    
+    iconClick(){
+        this.props.collapsedClick()
+    }
     render() {
         const usermenu = (
             <Menu onClick={this.user_li_click}>
@@ -36,29 +32,26 @@ class HeaderBar extends Component {
                 </Menu.Item>
             </Menu>
         );
+        const iconType = this.props.collapsed?"menu-unfold":"menu-fold"
         return (
             <Header className="layout_Header_box">
                 <div className="header_left">
-                    <div className="logo">
-                        <img src={require('@/assets/image/group.png')} alt="" />
-                    </div>
-                    <ul className="header_nav_ul">
-                        <li className={`nav_ul_li ${this.state.activeIndex === 0?'active':''}`} onClick={this.nav_li_click.bind(this,0)}>会议列表</li>
-                        <li className={`nav_ul_li ${this.state.activeIndex === 1?'active':''}`} onClick={this.nav_li_click.bind(this,1)}>账号管理</li>
-                    </ul>
-                </div> 
+
+                    <Icon type={iconType} style={{ fontSize: '16px' }} onClick={this.iconClick.bind(this)}/>
+
+                </div>
                 <div className="header_right">
                     <div className="company_list_container">
-                        
+
                     </div>
                     <div className="user_container">
                         <Dropdown overlay={usermenu} trigger={['click']}>
                             <a className="ant-dropdown-link" href="/">
-                                {this.state.companyName} <Icon type="down" />
+                                {this.state.userName} <Icon type="down" />
                             </a>
                         </Dropdown>
                     </div>
-                </div> 
+                </div>
             </Header>
         )
     }
