@@ -2,7 +2,7 @@ import React, {
     Component
 } from 'react';
 import { Menu, Icon } from 'antd';
-import {Link,withRouter} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './siderbar.less'
 class SiderBar extends Component {
     state={
@@ -20,20 +20,13 @@ class SiderBar extends Component {
         )
     }
     renderMenuItem = ({key,icon,title})=>{
-        // return (
-        //   <Menu.Item key={key}>
-        //     <Link to={key}>
-        //       {icon && <Icon type={icon}/>}
-        //       <span>{title}</span>
-        //     </Link>
-        //   </Menu.Item>
-        // )
-
         return (
-            <Menu.Item key={key}>
+          <Menu.Item key={key}>
+            <Link to={key}>
               {icon && <Icon type={icon}/>}
               <span>{title}</span>
-            </Menu.Item>
+            </Link>
+          </Menu.Item>
         )
     }
     render() {

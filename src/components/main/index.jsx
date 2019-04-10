@@ -4,8 +4,9 @@ import React, {
 import {Layout} from 'antd';
 import HeaderBar from './components/header-bar/headerbar.js';
 import SiderBar from './components/sider-bar/siderbar.js';
+import MainContent from './components/main-content/mainContent.js';
 import "./index.less";
-const { Content, Sider } = Layout;
+const {  Sider } = Layout;
 const menus = [
     {
         title:"首页",
@@ -50,7 +51,7 @@ class Main extends Component {
                 </Sider>
                 <Layout>
                     <HeaderBar collapsed={this.state.collapsed} collapsedClick={this.onCollapse.bind(this)}></HeaderBar>
-                    <Content></Content>
+                    <MainContent></MainContent>
                 </Layout>
 
 
